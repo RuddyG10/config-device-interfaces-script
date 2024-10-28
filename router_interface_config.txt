@@ -1,0 +1,52 @@
+! Generated
+
+interface E0/0
+  description Red interna
+  ip address 10.0.0.1 255.255.255.0
+  no shutdown
+
+  
+   router ospf 1
+   network 10.0.0.0 0.0.0.255 area 0
+
+  
+
+! Generated
+
+interface E0/1
+  description WAN
+  ip address 10.0.1.1 255.255.255.252
+  no shutdown
+
+  
+   ip route 0.0.0.0 0.0.0.0 10.0.1.2
+
+  
+
+! Generated
+
+interface E0/2
+  description Invitados
+  ip address 10.0.2.1 255.255.255.0
+  no shutdown
+
+  
+   router rip
+   version 2
+   network 10.0.2.0
+
+  
+
+! Generated
+
+interface E0/3
+  description Personal externo
+  ip address 10.0.3.1 255.255.255.0
+  no shutdown
+
+  
+   router eigrp 1
+   network 10.0.3.0 0.0.0.255
+
+  
+

@@ -1,0 +1,5 @@
+Interface,Network,IP_Address,Subnet_Mask,Description,Routing_Protocol
+E0/0,10.0.0.0,10.0.0.1,255.255.255.0,Red interna,OSPF
+E0/1,10.0.1.0,10.0.1.1,255.255.255.252,WAN,static
+E0/2,10.0.2.0,10.0.2.1,255.255.255.0,Invitados,RIP
+E0/3,10.0.3.0,10.0.3.1,255.255.255.0,Personal externo,EIGRP

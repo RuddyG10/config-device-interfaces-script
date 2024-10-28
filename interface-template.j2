@@ -1,0 +1,25 @@
+! Generated
+
+interface {{interface}}
+  description {{description}}
+  ip address {{ip_address}} {{subnet_mask}}
+  no shutdown
+
+  {% if routing_protocol == "OSPF" %}
+   router ospf 1
+   network {{network}} 0.0.0.255 area 0
+
+  {% elif routing_protocol == "EIGRP" %}
+   router eigrp 1
+   network {{network}} 0.0.0.255
+
+  {% elif routing_protocol == "RIP" %}
+   router rip
+   version 2
+   network {{network}}
+
+  {% elif routing_protocol == "static" %}
+   ip route 0.0.0.0 0.0.0.0 10.0.1.2
+
+  {% endif %}
+
